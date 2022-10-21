@@ -66,11 +66,11 @@ public class ConverterSpy<INPUT, OUTPUT> implements Converter<INPUT, OUTPUT> {
 	}
 
 	private OUTPUT getNextOutput() {
-		if (++outputsCounter == this.outputs.size()) {
+		if (outputsCounter == this.outputs.size()) {
 			outputsCounter = 0;
 		}
 
-		OUTPUT output = this.outputs.get(outputsCounter);
+		OUTPUT output = this.outputs.get(outputsCounter++);
 		deliveredOutputs.add(output);
 		return output;
 	}
